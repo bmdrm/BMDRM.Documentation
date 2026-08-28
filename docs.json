@@ -12,27 +12,29 @@
     "dark": "/images/android-chrome-192x192.png"
   },
   "navigation": {
-    "groups": [
+    "pages": [
       {
         "group": "BMDRM",
         "pages": [
           "untitled-page-3",
           "quickstart",
+          "untitled-page-4",
           "faq"
         ]
       },
       {
-        "group": "Accounts & Billing",
+        "group": "Features",
         "pages": [
           {
-            "group": "Account Settings",
+            "group": "Encoding",
             "pages": [
-              "untitled-page",
-              "untitled-page-2"
+              "untitled-page-2",
+              "untitled-page-5"
             ]
           }
         ]
-      }
+      },
+      "untitled-page"
     ]
   },
   "logo": {
