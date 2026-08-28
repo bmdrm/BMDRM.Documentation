@@ -12,7 +12,7 @@
     "dark": "/images/android-chrome-192x192.png"
   },
   "navigation": {
-    "pages": [
+    "groups": [
       {
         "group": "BMDRM",
         "pages": [
@@ -34,7 +34,12 @@
           }
         ]
       },
-      "untitled-page"
+      {
+        "group": "Accounts",
+        "pages": [
+          "untitled-page"
+        ]
+      }
     ]
   },
   "logo": {
@@ -65,5 +70,8 @@
   },
   "icons": {
     "library": "fontawesome"
+  },
+  "appearance": {
+    "default": "light"
   }
 }
