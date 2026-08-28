@@ -1,0 +1,179 @@
+---
+title: "BMDRM Scripting: Serverless Code at the Edge"
+sidebarTitle: "Scripting"
+description: "BMDRM Scripting runs JavaScript and TypeScript at the edge. Modify requests, personalize responses, and build custom logic with low latency."
+---
+
+BMDRM Scripting lets you run JavaScript and TypeScript code at the edge, close to your users. You can modify requests and responses, inject headers, route traffic, and implement custom authentication without changing your origin application. This page covers how Scripting works and how to deploy your first edge function.
+
+## Key features
+
+<CardGroup cols={3}>
+  <Card title="Edge execution" icon="bolt">
+    Run code on every request at the nearest edge node for sub-millisecond overhead.
+  </Card>
+
+  <Card title="Request and response transforms" icon="shuffle">
+    Rewrite URLs, add or remove headers, and modify response bodies before they reach the client.
+  </Card>
+
+  <Card title="Geolocation and device data" icon="location-dot">
+    Access client country, region, and device hints to personalize content or enforce rules.
+  </Card>
+
+  <Card title="KV and cache APIs" icon="database">
+    Store and retrieve small key-value pairs or cache short-lived data directly from your script.
+  </Card>
+
+  <Card title="TypeScript support" icon="code">
+    Write in TypeScript with full type definitions and deploy compiled code automatically.
+  </Card>
+</CardGroup>
+
+## How it works
+
+You write a script that exports a request handler. When BMDRM receives a matching request, it executes your handler at the edge before, during, or after communicating with the origin. You can return a response directly, forward the request, or modify the response on its way back. Scripts are versioned and can be deployed instantly across the network.
+
+## Get started
+
+<Steps>
+  <Step title="Create a script">
+    In the BMDRM dashboard, go to **Products \> Scripting** and click **New script**. Choose a starter template or write your own handler.
+  </Step>
+  <Step title="Write handler logic">
+    Implement request transforms, routing rules, or custom authentication using the provided runtime APIs.
+  </Step>
+  <Step title="Test locally">
+    Use the BMDRM CLI to run your script against local or remote requests and inspect logs.
+  </Step>
+  <Step title="Deploy to production">
+    Attach the script to a pull zone or route and deploy. Changes propagate globally within seconds.
+  </Step>
+</Steps>
+
+### Example script
+
+<CodeGroup>
+
+```javascript JavaScript
+export default {
+  async fetch(request, env) {
+    const url = new URL(request.url);
+    if (url.pathname === '/blocked') {
+      return new Response('Not allowed', { status: 403 });
+    }
+    const response = await fetch(request);
+    response.headers.set('X-Edge-Processed', 'true');
+    return response;
+  }
+};
+```
+
+```typescript TypeScript
+interface Env {}
+
+export default {
+  async fetch(request: Request, env: Env): Promise<Response> {
+    const url = new URL(request.url);
+    if (url.pathname === '/blocked') {
+      return new Response('Not allowed', { status: 403 });
+    }
+    const response = await fetch(request);
+    response.headers.set('X-Edge-Processed', 'true');
+    return response;
+  }
+};
+```
+
+</CodeGroup>
+
+<Warning>
+  Script execution has memory and CPU limits. Offload heavy computation to origin servers or background containers when needed.
+</Warning>
+
+BMDRM Scripting lets you run JavaScript and TypeScript code at the edge, close to your users. You can modify requests and responses, inject headers, route traffic, and implement custom authentication without changing your origin application. This page covers how Scripting works and how to deploy your first edge function.
+
+## Key features
+
+<CardGroup cols={3}>
+  <Card title="Edge execution" icon="bolt">
+    Run code on every request at the nearest edge node for sub-millisecond overhead.
+  </Card>
+
+  <Card title="Request and response transforms" icon="shuffle">
+    Rewrite URLs, add or remove headers, and modify response bodies before they reach the client.
+  </Card>
+
+  <Card title="Geolocation and device data" icon="location-dot">
+    Access client country, region, and device hints to personalize content or enforce rules.
+  </Card>
+
+  <Card title="KV and cache APIs" icon="database">
+    Store and retrieve small key-value pairs or cache short-lived data directly from your script.
+  </Card>
+
+  <Card title="TypeScript support" icon="code">
+    Write in TypeScript with full type definitions and deploy compiled code automatically.
+  </Card>
+</CardGroup>
+
+## How it works
+
+You write a script that exports a request handler. When BMDRM receives a matching request, it executes your handler at the edge before, during, or after communicating with the origin. You can return a response directly, forward the request, or modify the response on its way back. Scripts are versioned and can be deployed instantly across the network.
+
+## Get started
+
+<Steps>
+  <Step title="Create a script">
+    In the BMDRM dashboard, go to **Products \> Scripting** and click **New script**. Choose a starter template or write your own handler.
+  </Step>
+  <Step title="Write handler logic">
+    Implement request transforms, routing rules, or custom authentication using the provided runtime APIs.
+  </Step>
+  <Step title="Test locally">
+    Use the BMDRM CLI to run your script against local or remote requests and inspect logs.
+  </Step>
+  <Step title="Deploy to production">
+    Attach the script to a pull zone or route and deploy. Changes propagate globally within seconds.
+  </Step>
+</Steps>
+
+### Example script
+
+<CodeGroup>
+
+```javascript JavaScript
+export default {
+  async fetch(request, env) {
+    const url = new URL(request.url);
+    if (url.pathname === '/blocked') {
+      return new Response('Not allowed', { status: 403 });
+    }
+    const response = await fetch(request);
+    response.headers.set('X-Edge-Processed', 'true');
+    return response;
+  }
+};
+```
+
+```typescript TypeScript
+interface Env {}
+
+export default {
+  async fetch(request: Request, env: Env): Promise<Response> {
+    const url = new URL(request.url);
+    if (url.pathname === '/blocked') {
+      return new Response('Not allowed', { status: 403 });
+    }
+    const response = await fetch(request);
+    response.headers.set('X-Edge-Processed', 'true');
+    return response;
+  }
+};
+```
+
+</CodeGroup>
+
+<Warning>
+  Script execution has memory and CPU limits. Offload heavy computation to origin servers or background containers when needed.
+</Warning>

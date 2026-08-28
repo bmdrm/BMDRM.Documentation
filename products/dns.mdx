@@ -1,0 +1,56 @@
+---
+title: "BMDRM DNS: Ultra-Fast Scriptable DNS Platform"
+sidebarTitle: "DNS"
+description: "BMDRM DNS is an authoritative DNS platform with edge scripting and low latency. Manage records programmatically and respond dynamically to queries."
+---
+
+BMDRM DNS is an authoritative DNS platform designed for speed and flexibility. You can manage standard records through the dashboard or API, and you can attach scripts to respond dynamically to DNS queries based on geolocation, load, or custom logic. This page explains how BMDRM DNS works and how to set up your first zone.
+
+## Key features
+
+<CardGroup cols={3}>
+  <Card title="Authoritative DNS" icon="network-wired">
+    Host your domain zones on BMDRM with fast propagation and high availability.
+  </Card>
+
+  <Card title="Scriptable responses" icon="code">
+    Write JavaScript that returns custom answers per query, enabling geo-routing, load balancing, and redirects.
+  </Card>
+
+  <Card title="Low latency" icon="bolt">
+    Answers are served from the nearest edge resolver to minimize DNS lookup time.
+  </Card>
+
+  <Card title="Record types" icon="list">
+    Support for A, AAAA, CNAME, MX, TXT, NS, SRV, CAA, and other common record types.
+  </Card>
+
+  <Card title="API and CLI" icon="terminal">
+    Automate zone and record management with the BMDRM API or command-line工具.
+  </Card>
+</CardGroup>
+
+## How it works
+
+You create a DNS zone and delegate your domain to BMDRM name servers. Standard records are served directly from the edge. For dynamic behavior, you attach a script to a record or zone. When a query matches, the script executes and returns a computed answer, such as the closest origin IP or a failover response.
+
+## Get started
+
+<Steps>
+  <Step title="Create a zone">
+    In the BMDRM dashboard, go to **Products \> DNS** and click **Add zone**. Enter your domain name.
+  </Step>
+  <Step title="Delegate name servers">
+    Update your domain registrar to use the BMDRM name servers listed in the zone details.
+  </Step>
+  <Step title="Add records">
+    Create A, CNAME, MX, and other records. Set TTLs and optional scripting rules per record.
+  </Step>
+  <Step title="Test resolution">
+    Use dig or nslookup to verify records are resolving correctly from multiple locations.
+  </Step>
+</Steps>
+
+<Tip>
+  Start with a test subdomain before migrating your production domain to confirm record behavior and script logic.
+</Tip>

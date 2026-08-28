@@ -1,0 +1,62 @@
+---
+title: "BMDRM Platform Domains and Custom Hostnames"
+sidebarTitle: "Platform Domains"
+description: "Learn about default platform domains, how to add custom hostnames, verify DNS, and manage SSL/TLS certificates on BMDRM."
+---
+
+Every BMDRM resource is assigned a default platform domain so it works immediately. You can also add custom hostnames to serve traffic on your own domains with managed certificates.
+
+## Default platform domains
+
+When you create a resource, BMDRM provisions it under a default domain such as:
+
+```text
+*.b-cdn.bmdrm.net
+```
+
+Replace the wildcard with your resource identifier to access content directly. These domains are valid, pre-configured, and ready for immediate testing.
+
+## Custom hostnames overview
+
+Adding a custom hostname lets you serve traffic on your own domain. BMDRM handles SSL/TLS provisioning, renewal, and revocation automatically once DNS verification succeeds.
+
+<Warning>
+  Do not point production traffic to a custom hostname until DNS verification and certificate issuance are complete.
+</Warning>
+
+## Add a custom domain
+
+<Steps>
+  <Step title="Open Domains settings">
+    In the dashboard, go to **Domains \> Custom Hostnames** and click **Add Domain**.
+  </Step>
+  <Step title="Enter your domain">
+    Provide the fully qualified domain name you want to add (for example, `cdn.example.com`).
+  </Step>
+  <Step title="Verify DNS ownership">
+    BMDRM provides a TXT record. Add it to your DNS provider and click **Verify**.
+  </Step>
+  <Step title="Wait for certificate issuance">
+    After verification, BMDRM requests and installs a managed SSL/TLS certificate. This usually completes within a few minutes.
+  </Step>
+  <Step title="Update DNS to BMDRM">
+    Point your domain to the provided BMDRM target using a CNAME record. Traffic will route through the platform once DNS propagates.
+  </Step>
+</Steps>
+
+## SSL/TLS certificates
+
+Managed certificates are automatically renewed. If you require a specific certificate configuration, contact support.
+
+<Tabs>
+  <Tab title="Auto-managed">
+    BMDRM provisions and renews certificates without any action required.
+  </Tab>
+  <Tab title="Bring your own">
+    Enterprise plans can upload custom certificates through the API or dashboard.
+  </Tab>
+</Tabs>
+
+<Note>
+  Certificate issuance may be delayed if DNS records are cached or if the domain has CAA restrictions.
+</Note>

@@ -1,0 +1,107 @@
+---
+title: "Manage Your BMDRM Account Settings and Profile"
+sidebarTitle: "Account Settings"
+description: "Update your profile, password, and 2FA. Generate API keys and manage notification preferences in BMDRM."
+---
+
+BMDRM gives you full control over your account from one central settings page. You can update your personal profile, secure your account with two-factor authentication (2FA), generate API keys for automation, and choose which notifications you receive.
+
+This page covers common account management tasks and where to find each setting in the dashboard.
+
+## Update Your Profile Info
+
+Keeping your profile up to date ensures BMDRM can reach you with important account alerts.
+
+<Steps>
+  <Step title="Open Account Settings">
+    Sign in to the BMDRM dashboard, click your avatar in the top-right corner, and select **Account Settings**.
+  </Step>
+  <Step title="Edit Your Details">
+    Update your display name, email address, company name, and time zone. Click **Save Changes** when finished.
+  </Step>
+</Steps>
+
+<Note>
+  Changing your email address will trigger a verification email. You must confirm the new address before it takes effect.
+</Note>
+
+## Change Your Password
+
+For security, BMDRM recommends rotating your password every 90 days.
+
+<Steps>
+  <Step title="Go to Security">
+    In **Account Settings**, select the **Security** tab.
+  </Step>
+  <Step title="Update Password">
+    Enter your current password, then type and confirm your new password. Click **Update Password**.
+  </Step>
+</Steps>
+
+<Warning>
+  Choose a strong password with at least 12 characters, including uppercase, lowercase, numbers, and symbols.
+</Warning>
+
+## Enable Two-Factor Authentication (2FA)
+
+Adding 2FA protects your account even if your password is compromised.
+
+<Steps>
+  <Step title="Start Setup">
+    In **Account Settings \> Security**, click **Enable 2FA**.
+  </Step>
+  <Step title="Scan the QR Code">
+    Use an authenticator app (such as Google Authenticator or Authy) to scan the QR code displayed on screen.
+  </Step>
+  <Step title="Verify and Save">
+    Enter the 6-digit code from your authenticator app to confirm, then store your backup codes in a safe place.
+  </Step>
+</Steps>
+
+## Create an API Key
+
+API keys let scripts and applications interact with BMDRM on your behalf.
+
+<Steps>
+  <Step title="Open API Keys">
+    Navigate to **Account Settings \> API Keys**.
+  </Step>
+  <Step title="Generate a New Key">
+    Click **Create API Key**, give it a descriptive name (e.g., "CI/CD Automation"), and select the scopes you need.
+  </Step>
+  <Step title="Copy and Store">
+    Copy the key immediately. BMDRM shows it only once.
+  </Step>
+</Steps>
+
+<Tip>
+  Create separate API keys for different services so you can revoke one without affecting others.
+</Tip>
+
+## Manage Notification Preferences
+
+Control which events send you email or push alerts.
+
+<Steps>
+  <Step title="Open Notifications">
+    In **Account Settings**, click the **Notifications** tab.
+  </Step>
+  <Step title="Toggle Channels">
+    Enable or disable alerts for billing events, security warnings, product updates, and team activity by email or dashboard notifications.
+  </Step>
+  <Step title="Save Preferences">
+    Click **Save Preferences** to apply your changes.
+  </Step>
+</Steps>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Team Management" icon="users" href="/accounts/team-management">
+    Invite teammates and manage roles and permissions.
+  </Card>
+
+  <Card title="Billing" icon="credit-card" href="/accounts/billing">
+    Manage payment methods, invoices, and spending limits.
+  </Card>
+</CardGroup>

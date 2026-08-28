@@ -1,0 +1,90 @@
+---
+title: "BMDRM CDN: Global Content Delivery Network"
+sidebarTitle: "CDN"
+description: "BMDRM CDN accelerates and protects web content with global caching, edge SSL, and real-time analytics. Deploy closer to users in minutes."
+---
+
+BMDRM CDN distributes your content from a global network of edge servers, reducing latency and improving availability for users anywhere. This page explains what the CDN offers, how caching and security work, and how to get your first zone running.
+
+## Key features
+
+<CardGroup cols={3}>
+  <Card title="Global edge caching" icon="globe">
+    Cache static and dynamic content at edge nodes near your users for lower latency and higher throughput.
+  </Card>
+
+  <Card title="Automatic SSL" icon="lock">
+    TLS certificates are provisioned and renewed automatically for every custom domain you add.
+  </Card>
+
+  <Card title="Real-time analytics" icon="chart-line">
+    Monitor cache hit ratio, bandwidth, requests, and HTTP status codes from the dashboard.
+  </Card>
+
+  <Card title="DDoS resilience" icon="shield-halved">
+    Built-in Layer 3/4 mitigation and connection profiling help absorb volumetric attacks.
+  </Card>
+
+  <Card title="Custom rules" icon="sliders">
+    Define cache behaviors, redirects, and header modifications with point-and-click rules.
+  </Card>
+</CardGroup>
+
+## How it works
+
+When a user requests your content, BMDRM CDN routes the request to the nearest healthy edge node. If the object is cached and fresh, it is served immediately. If not, the edge fetches it from your origin, caches it according to your rules, and delivers it to the user. You can purge cache globally or by URL at any time.
+
+## Get started
+
+<Steps>
+  <Step title="Create a pull zone">
+    In the BMDRM dashboard, go to **Products \> CDN** and click **Create pull zone**. Enter your origin URL.
+  </Step>
+  <Step title="Add a custom domain">
+    Add a domain you control and verify DNS ownership. BMDRM will issue an SSL certificate automatically.
+  </Step>
+  <Step title="Update DNS">
+    Create a CNAME record pointing your domain to the assigned BMDRM hostname.
+  </Step>
+  <Step title="Configure caching">
+    Set cache TTLs, query string handling, and edge rules to match your application needs.
+  </Step>
+</Steps>
+
+### Example API request
+
+You can also manage zones programmatically via the BMDRM API.
+
+<CodeGroup>
+
+```bash cURL
+curl -X POST https://api.bmdrm.com/v1/cdn/zones \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "my-pull-zone",
+    "origin_url": "https://origin.example.com"
+  }'
+```
+
+```javascript JavaScript
+const res = await fetch('https://api.bmdrm.com/v1/cdn/zones', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    name: 'my-pull-zone',
+    origin_url: 'https://origin.example.com'
+  })
+});
+const data = await res.json();
+console.log(data);
+```
+
+</CodeGroup>
+
+<Tip>
+  Use cache tags to purge related content in a single API call instead of invalidating by URL.
+</Tip>

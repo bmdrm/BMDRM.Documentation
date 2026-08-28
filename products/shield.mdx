@@ -1,0 +1,107 @@
+---
+title: "BMDRM Shield: DDoS Protection and WAF"
+sidebarTitle: "Shield"
+description: "BMDRM Shield blocks DDoS attacks, web intrusions, and malicious bots. Protect applications with automated threat detection and customizable firewall rules."
+---
+
+BMDRM Shield protects your applications and APIs from distributed denial of service attacks, web intrusions, and automated abuse. It combines network-layer mitigation with an application-layer web application firewall and bot management. This page describes Shield's capabilities and how to enable protection for your services.
+
+## Key features
+
+<CardGroup cols={3}>
+  <Card title="Always-on DDoS protection" icon="shield-halved">
+    Volumetric and protocol attacks are absorbed automatically without configuration or traffic limits.
+  </Card>
+
+  <Card title="Web application firewall" icon="fire-extinguisher">
+    Block SQL injection, XSS, and other common attacks with managed and custom rule sets.
+  </Card>
+
+  <Card title="Bot management" icon="robot">
+    Distinguish between legitimate crawlers, helpful automation, and malicious bots using behavioral signals.
+  </Card>
+
+  <Card title="Rate limiting" icon="gauge-high">
+    Set request thresholds per IP, user agent, or custom key to throttle abuse and scraping.
+  </Card>
+
+  <Card title="Security analytics" icon="chart-pie">
+    Review blocked threats, rule triggers, and attack patterns in real time from the dashboard.
+  </Card>
+</CardGroup>
+
+## How it works
+
+All traffic routed through BMDRM passes through Shield inspection layers. Network-layer anomalies are mitigated at the edge before reaching your application. HTTP requests are evaluated against managed and custom WAF rules. Suspicious bots are challenged or blocked based on behavioral scores. Clean traffic continues to your origin or edge services.
+
+## Get started
+
+<Steps>
+  <Step title="Enable Shield">
+    In the BMDRM dashboard, go to **Products \> Shield** and toggle protection for your pull zone or container project.
+  </Step>
+  <Step title="Review managed rules">
+    Inspect the default WAF rule groups and choose which ones to enforce, log, or disable.
+  </Step>
+  <Step title="Add custom rules">
+    Create IP allowlists, geo-blocking rules, or custom regex patterns for your application.
+  </Step>
+  <Step title="Configure responses">
+    Choose how Shield responds to blocked requests: standard HTTP codes, custom pages, or silent drops.
+  </Step>
+</Steps>
+
+<Note>
+  Managed rule groups are updated automatically as new threat signatures are released. You do not need to redeploy to stay protected.
+</Note>
+
+BMDRM Shield protects your applications and APIs from distributed denial of service attacks, web intrusions, and automated abuse. It combines network-layer mitigation with an application-layer web application firewall and bot management. This page describes Shield's capabilities and how to enable protection for your services.
+
+## Key features
+
+<CardGroup cols={3}>
+  <Card title="Always-on DDoS protection" icon="shield-halved">
+    Volumetric and protocol attacks are absorbed automatically without configuration or traffic limits.
+  </Card>
+
+  <Card title="Web application firewall" icon="fire-extinguisher">
+    Block SQL injection, XSS, and other common attacks with managed and custom rule sets.
+  </Card>
+
+  <Card title="Bot management" icon="robot">
+    Distinguish between legitimate crawlers, helpful automation, and malicious bots using behavioral signals.
+  </Card>
+
+  <Card title="Rate limiting" icon="gauge-high">
+    Set request thresholds per IP, user agent, or custom key to throttle abuse and scraping.
+  </Card>
+
+  <Card title="Security analytics" icon="chart-pie">
+    Review blocked threats, rule triggers, and attack patterns in real time from the dashboard.
+  </Card>
+</CardGroup>
+
+## How it works
+
+All traffic routed through BMDRM passes through Shield inspection layers. Network-layer anomalies are mitigated at the edge before reaching your application. HTTP requests are evaluated against managed and custom WAF rules. Suspicious bots are challenged or blocked based on behavioral scores. Clean traffic continues to your origin or edge services.
+
+## Get started
+
+<Steps>
+  <Step title="Enable Shield">
+    In the BMDRM dashboard, go to **Products \> Shield** and toggle protection for your pull zone or container project.
+  </Step>
+  <Step title="Review managed rules">
+    Inspect the default WAF rule groups and choose which ones to enforce, log, or disable.
+  </Step>
+  <Step title="Add custom rules">
+    Create IP allowlists, geo-blocking rules, or custom regex patterns for your application.
+  </Step>
+  <Step title="Configure responses">
+    Choose how Shield responds to blocked requests: standard HTTP codes, custom pages, or silent drops.
+  </Step>
+</Steps>
+
+<Note>
+  Managed rule groups are updated automatically as new threat signatures are released. You do not need to redeploy to stay protected.
+</Note>

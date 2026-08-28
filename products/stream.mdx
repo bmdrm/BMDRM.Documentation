@@ -1,0 +1,56 @@
+---
+title: "BMDRM Stream: Video Streaming and Delivery"
+sidebarTitle: "Stream"
+description: "BMDRM Stream handles video upload, encoding, storage, and adaptive playback. Deliver high-quality video to any device with global edge distribution."
+---
+
+BMDRM Stream provides an end-to-end video pipeline so you can upload once and deliver adaptive bitrate streams to viewers worldwide. This page covers how BMDRM handles transcoding, storage, playback, and security for your video content.
+
+## Key features
+
+<CardGroup cols={3}>
+  <Card title="Adaptive bitrate streaming" icon="film">
+    Transcode videos into multiple resolutions and bitrates for smooth playback on any connection.
+  </Card>
+
+  <Card title="Global edge delivery" icon="globe">
+    Videos are distributed through the BMDRM edge network for low-latency playback anywhere.
+  </Card>
+
+  <Card title="Video security" icon="lock">
+    Restrict playback with signed URLs, token authentication, and geo-blocking controls.
+  </Card>
+
+  <Card title="Player SDK" icon="play">
+    Embed a customizable HTML5 player with out-of-the-box support for captions and thumbnails.
+  </Card>
+
+  <Card title="Analytics" icon="chart-column">
+    Track views, watch time, buffering events, and audience geography per video or collection.
+  </Card>
+</CardGroup>
+
+## How it works
+
+You upload a source video through the dashboard or API. BMDRM transcodes it into adaptive HLS or DASH renditions and stores them durably. When a viewer presses play, the player requests a manifest from the nearest edge node, which serves the appropriate quality segments based on bandwidth and device capabilities.
+
+## Get started
+
+<Steps>
+  <Step title="Create a video library">
+    In the BMDRM dashboard, go to **Products \> Stream** and create a new library to organize your content.
+  </Step>
+  <Step title="Upload a video">
+    Drag and drop a file or use the API to upload a source video. Transcoding begins automatically.
+  </Step>
+  <Step title="Configure playback settings">
+    Choose allowed domains, enable signed URLs, and select caption tracks or poster images.
+  </Step>
+  <Step title="Embed the player">
+    Copy the embed snippet or use the Stream player SDK to add the video to your application.
+  </Step>
+</Steps>
+
+<Note>
+  Supported source formats include MP4, MOV, MKV, and common ProRes variants. Output is HLS and DASH with CMAF.
+</Note>

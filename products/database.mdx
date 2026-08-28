@@ -1,0 +1,88 @@
+---
+title: "BMDRM Database: Serverless SQLite Over HTTP"
+sidebarTitle: "Database"
+description: "BMDRM Database is a serverless SQLite platform accessed over HTTP. Create databases, run SQL, and scale without provisioning servers or connection pools."
+---
+
+BMDRM Database gives you serverless SQLite databases accessible over HTTP. You can create a database, execute SQL, and integrate it into applications without managing connection pools, replicas, or server capacity. This page explains how the service works and how to run your first query.
+
+## Key features
+
+<CardGroup cols={3}>
+  <Card title="HTTP API" icon="globe">
+    Send SQL queries and schema changes over standard HTTPS without database drivers or connection strings.
+  </Card>
+
+  <Card title="Serverless scaling" icon="server">
+    Databases scale automatically. You are not responsible for provisioning, replication, or failover.
+  </Card>
+
+  <Card title="Transactions" icon="right-left">
+    Run batched queries and transactions atomically through the HTTP request body.
+  </Card>
+
+  <Card title="WebSocket streaming" icon="bolt">
+    Subscribe to change feeds or stream query results in real time over WebSocket connections.
+  </Card>
+
+  <Card title="Persistent storage" icon="hard-drive">
+    Data is durably stored and backed up automatically. Restore from snapshots when needed.
+  </Card>
+</CardGroup>
+
+## How it works
+
+You create a database through the dashboard or API. BMDRM provisions the SQLite file and exposes an HTTP endpoint for queries. Your application sends SQL as JSON payloads and receives results as JSON arrays. The platform handles concurrency, journaling, and backups transparently.
+
+## Get started
+
+<Steps>
+  <Step title="Create a database">
+    In the BMDRM dashboard, go to **Products \> Database** and click **Create database**. Choose a region and name.
+  </Step>
+  <Step title="Initialize the schema">
+    Run CREATE TABLE and INDEX statements through the dashboard SQL console or the API.
+  </Step>
+  <Step title="Connect your application">
+    Use the provided HTTP endpoint and API token to execute queries from your backend or edge functions.
+  </Step>
+  <Step title="Monitor usage">
+    Review query volume, latency, and storage size in the Database analytics panel.
+  </Step>
+</Steps>
+
+### Example API request
+
+<CodeGroup>
+
+```bash cURL
+curl -X POST https://api.bmdrm.com/v1/databases/my-db/query \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "sql": "SELECT * FROM users WHERE active = ?",
+    "params": [1]
+  }'
+```
+
+```javascript JavaScript
+const res = await fetch('https://api.bmdrm.com/v1/databases/my-db/query', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    sql: 'SELECT * FROM users WHERE active = ?',
+    params: [1]
+  })
+});
+const rows = await res.json();
+console.log(rows);
+```
+
+</CodeGroup>
+
+<Tip>
+  Use parameterized queries to prevent SQL injection and improve statement caching performance.
+</Tip>

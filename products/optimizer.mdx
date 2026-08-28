@@ -1,0 +1,56 @@
+---
+title: "BMDRM Optimizer: Image and Web Optimization"
+sidebarTitle: "Optimizer"
+description: "BMDRM Optimizer resizes, compresses, and converts images on the fly. Improve Core Web Vitals with automatic web and image optimization at the edge."
+---
+
+BMDRM Optimizer transforms images and web assets in real time so you can serve the right format and size to every device without pre-generating variants. This page covers how to enable optimization, available transformations, and how to integrate it with your existing workflows.
+
+## Key features
+
+<CardGroup cols={3}>
+  <Card title="On-the-fly resizing" icon="expand">
+    Request any width or height via URL parameters and receive an optimized image instantly.
+  </Card>
+
+  <Card title="Automatic format selection" icon="file-image">
+    Serve WebP or AVIF to supporting browsers and fall back to JPEG or PNG automatically.
+  </Card>
+
+  <Card title="Quality tuning" icon="sliders">
+    Adjust compression quality per request or set defaults that balance size and visual fidelity.
+  </Card>
+
+  <Card title="CSS and JS minification" icon="code">
+    Minify stylesheets and scripts at the edge to reduce transfer size and parse time.
+  </Card>
+
+  <Card title="Lazy loading hints" icon="eye-slash">
+    Add lazy loading and responsive image hints to your markup for faster initial renders.
+  </Card>
+</CardGroup>
+
+## How it works
+
+You point your image URLs through the BMDRM Optimizer endpoint or integrate it as a CDN transform. When a request arrives, the edge checks for a cached optimized version. If none exists, it fetches the original, applies the specified transformations, caches the result, and serves it. Subsequent requests hit the cache instantly.
+
+## Get started
+
+<Steps>
+  <Step title="Enable Optimizer">
+    In the BMDRM dashboard, go to **Products \> Optimizer** and toggle optimization for your pull zone or domain.
+  </Step>
+  <Step title="Configure defaults">
+    Set default quality levels, allowed formats, and maximum dimensions for automatic optimization.
+  </Step>
+  <Step title="Update image URLs">
+    Append transformation parameters to your image URLs, or use the provided SDK helpers to generate optimized links.
+  </Step>
+  <Step title="Monitor metrics">
+    Review saved bytes, format distribution, and Core Web Vitals changes in the Optimizer analytics panel.
+  </Step>
+</Steps>
+
+<Note>
+  Optimizer works with images hosted on BMDRM Storage or any publicly accessible origin URL.
+</Note>

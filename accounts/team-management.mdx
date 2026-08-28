@@ -1,0 +1,84 @@
+---
+title: "Team Management, Roles, and Permissions in BMDRM"
+sidebarTitle: "Team Management"
+description: "Invite members, assign roles, and control access to BMDRM projects and billing with role-based permissions."
+---
+
+BMDRM lets you share account access with your team while keeping control over who can manage resources, view billing, or change settings. Each member is assigned a role that defines what they can see and do.
+
+This page explains how to invite members, how each role works, and how to remove someone from your team.
+
+## Invite a Team Member
+
+<Steps>
+  <Step title="Open Team Settings">
+    In the BMDRM dashboard, click your avatar, then choose **Team Management**.
+  </Step>
+  <Step title="Send an Invite">
+    Click **Invite Member**, enter the person's email address, select a role (Owner, Admin, Member, or Read-only), and click **Send Invitation**.
+  </Step>
+  <Step title="Accept Invitation">
+    The invitee will receive an email with a secure link to join your team. Invitations expire after 7 days.
+  </Step>
+</Steps>
+
+<Tip>
+  You can resend or cancel a pending invitation from the same page.
+</Tip>
+
+## Roles and Permissions
+
+BMDRM uses four roles. Permissions are cumulative; higher roles include the abilities of lower roles.
+
+| Permission | Owner | Admin | Member | Read-only |
+| :-- | :-: | :-: | :-: | :-: |
+| View all projects | ✓ | ✓ | ✓ | ✓ |
+| View billing and invoices | ✓ | ✓ | ✓ | ✗ |
+| Create and edit resources | ✓ | ✓ | ✓ | ✗ |
+| Invite and manage members | ✓ | ✓ | ✗ | ✗ |
+| Change billing and payment info | ✓ | ✓ | ✗ | ✗ |
+| Delete projects or resources | ✓ | ✓ | ✗ | ✗ |
+| Manage API keys and integrations | ✓ | ✓ | ✗ | ✗ |
+| Change or cancel the account | ✓ | ✗ | ✗ | ✗ |
+
+<Note>
+  Only the Owner can delete the account or transfer ownership. Each team must have exactly one Owner.
+</Note>
+
+## Change a Member's Role
+
+<Steps>
+  <Step title="Find the Member">
+    Go to **Team Management** and locate the person in the member list.
+  </Step>
+  <Step title="Update Role">
+    Click the role dropdown next to their name, select the new role, and confirm.
+  </Step>
+</Steps>
+
+## Remove a Team Member
+
+<Steps>
+  <Step title="Open Actions">
+    In **Team Management**, find the member and click the **More** menu (three dots).
+  </Step>
+  <Step title="Remove">
+    Select **Remove from Team** and confirm. The person loses access immediately.
+  </Step>
+</Steps>
+
+<Warning>
+  Removing a member does not delete resources they created. Transfer ownership of critical resources before removing an Owner.
+</Warning>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Account Settings" icon="user-gear" href="/accounts/account-settings">
+    Update your profile, password, and 2FA settings.
+  </Card>
+
+  <Card title="Billing" icon="credit-card" href="/accounts/billing">
+    Manage payment methods, invoices, and spending limits.
+  </Card>
+</CardGroup>

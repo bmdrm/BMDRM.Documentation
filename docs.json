@@ -1,0 +1,67 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "palm",
+  "name": "BMDRM",
+  "colors": {
+    "primary": "#7C3AED",
+    "light": "#A78BFA",
+    "dark": "#5B21B6"
+  },
+  "favicon": {
+    "light": "/images/android-chrome-192x192.png",
+    "dark": "/images/android-chrome-192x192.png"
+  },
+  "navigation": {
+    "groups": [
+      {
+        "group": "BMDRM",
+        "pages": [
+          "untitled-page-3",
+          "quickstart",
+          "faq"
+        ]
+      },
+      {
+        "group": "Accounts & Billing",
+        "pages": [
+          {
+            "group": "Account Settings",
+            "pages": [
+              "untitled-page",
+              "untitled-page-2"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "logo": {
+    "light": "/images/transparent-image.png",
+    "dark": "/images/transparent-image.png",
+    "href": "https://bmdrm.com/"
+  },
+  "navbar": {
+    "links": [
+      {
+        "href": "https://github.com/bmdrm",
+        "label": "GitHub"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Get Started",
+      "href": "https://dev.bmdrm.com/en/register"
+    }
+  },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude"
+    ]
+  },
+  "icons": {
+    "library": "fontawesome"
+  }
+}

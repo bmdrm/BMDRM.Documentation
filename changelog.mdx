@@ -1,0 +1,38 @@
+---
+title: "BMDRM Changelog: Product Updates and Releases"
+sidebarTitle: "Changelog"
+description: "Stay current with BMDRM releases, improvements, and fixes across CDN, Stream, Storage, and other platform products."
+---
+
+Track the latest BMDRM platform updates, new features, and resolved issues. Entries are listed with the most recent release first.
+
+## 2026-08-15
+
+- `**New**` **Stream analytics dashboard** now supports per-geo session breakdown and viewer quality metrics.
+- `**New**` **Storage** multi-region replication is available in beta for standard-tier buckets.
+- `**Improved**` **CDN** cache hit ratios improved for assets between 1 KB and 50 KB.
+- `**Fixed**` Resolved an edge case where **Optimizer** image variants could return incorrect dimensions for AVIF requests.
+
+## 2026-07-22
+
+- `**New**` **Shield** WAF rules now support custom rate-limiting expressions per hostname.
+- `**Improved**` **Containers** cold-start latency reduced for small workloads in select regions.
+- `**Fixed**` **DNS** record propagation time reduced for newly added zones.
+
+## 2026-06-30
+
+- `**New**` **Database** read replicas can now be provisioned independently via API and dashboard.
+- `**Improved**` **Scripting** logs now stream to external HTTP endpoints with configurable retry policies.
+- `**Fixed**` **CDN** stale-while-revalidate behavior aligned with expected origin cache Control headers.
+
+## 2026-06-09
+
+- `**New**` **Storage** pre-signed URL generation is available in all GA regions.
+- `**Improved**` **Stream** subtitle upload flow simplified with automatic format detection.
+- `**Fixed**` **Optimizer** metadata stripping for uploaded images is now consistent across formats.
+
+## 2026-05-18
+
+- `**New**` **Scripting** support for TypeScript-based handlers entered beta.
+- `**Improved**` **Containers** build cache improvements cut average image build times by 30 percent.
+- `**Fixed**` **Shield** IP reputation requests no longer return false positives for shared NAT ranges.

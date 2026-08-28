@@ -1,0 +1,47 @@
+---
+title: "Understanding BMDRM Product Release Stages"
+sidebarTitle: "Release Stages"
+description: "Learn how BMDRM stages products with Experimental, Alpha, Beta, GA, and Deprecated labels, plus SLA and support details."
+---
+
+BMDRM moves products and features through clearly defined release stages so you can decide when to adopt them. Each stage indicates the level of stability, support coverage, and SLA guarantees you can expect.
+
+<CardGroup>
+  <Card title="Experimental" icon="flask">
+    Early exploration. Not covered by SLA. APIs and behavior may change drastically.
+  </Card>
+
+  <Card title="Alpha" icon="code-branch">
+    Limited availability for testing. No SLA. Documentation may be incomplete.
+  </Card>
+
+  <Card title="Beta" icon="rocket">
+    Open to broader use. Best-effort support. SLA commitments are limited.
+  </Card>
+
+  <Card title="General Availability" icon="check-circle">
+    Production-ready. Full support and standard SLA coverage apply.
+  </Card>
+
+  <Card title="Deprecated" icon="ban">
+    Scheduled for removal. No new features, but support continues until end of life.
+  </Card>
+</CardGroup>
+
+## Support and SLA expectations by stage
+
+| Stage | Support level | SLA applies |
+| --- | --- | --- |
+| Experimental | Community only | No |
+| Alpha | Best effort | No |
+| Beta | Best effort | Partial |
+| General Availability | Standard support | Yes |
+| Deprecated | Standard until end date | Yes |
+
+<Note>
+  Products in Beta may not include all GA-level features, such as custom reporting or advanced analytics.
+</Note>
+
+<Tip>
+  Migrate off Deprecated features by the announced end-of-life date to avoid service disruption.
+</Tip>

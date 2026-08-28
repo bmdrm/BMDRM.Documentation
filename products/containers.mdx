@@ -1,0 +1,107 @@
+---
+title: "BMDRM Magic Containers: Deploy Docker Anywhere"
+sidebarTitle: "Magic Containers"
+description: "BMDRM Magic Containers run Docker workloads globally without managing servers. Deploy containers, scale automatically, and pay for usage only."
+---
+
+BMDRM Magic Containers let you deploy any Docker container to a global edge network and run it close to your users. You provide the image, BMDRM handles provisioning, scaling, and routing. This page explains how container deployment works and how to ship your first workload.
+
+## Key features
+
+<CardGroup cols={3}>
+  <Card title="Any Docker image" icon="docker">
+    Deploy public or private images from any registry. No platform-specific packaging required.
+  </Card>
+
+  <Card title="Global edge deployment" icon="globe">
+    Run containers in regions near your users for low-latency responses and local compliance.
+  </Card>
+
+  <Card title="Auto-scaling" icon="up-right-and-down-left-from-center">
+    Scale from zero to thousands of instances based on request volume or custom metrics.
+  </Card>
+
+  <Card title="HTTP and scheduled invocations" icon="bolt">
+    Serve HTTP traffic or run containers on a cron schedule for batch and background tasks.
+  </Card>
+
+  <Card title="Environment and secrets" icon="gear">
+    Inject environment variables and secrets securely at deploy time without baking them into images.
+  </Card>
+</CardGroup>
+
+## How it works
+
+You define a container by specifying an image, resource limits, and optional environment variables. BMDRM provisions the container on healthy edge nodes and routes incoming requests or scheduled triggers to running instances. When demand increases, additional instances are created automatically. When demand drops, idle instances scale down.
+
+## Get started
+
+<Steps>
+  <Step title="Create a container project">
+    In the BMDRM dashboard, go to **Products \> Magic Containers** and click **New project**.
+  </Step>
+  <Step title="Select an image">
+    Provide a Docker image reference from a public registry or connect a private registry with credentials.
+  </Step>
+  <Step title="Set resources and variables">
+    Choose memory and CPU limits, then add environment variables and secrets needed by your application.
+  </Step>
+  <Step title="Deploy and route traffic">
+    Deploy the container and assign a hostname or custom domain. BMDRM will route requests to running instances.
+  </Step>
+</Steps>
+
+<Tip>
+  Use lightweight base images and health-check endpoints to enable faster cold starts and more responsive scaling.
+</Tip>
+
+BMDRM Magic Containers let you deploy any Docker container to a global edge network and run it close to your users. You provide the image, BMDRM handles provisioning, scaling, and routing. This page explains how container deployment works and how to ship your first workload.
+
+## Key features
+
+<CardGroup cols={3}>
+  <Card title="Any Docker image" icon="docker">
+    Deploy public or private images from any registry. No platform-specific packaging required.
+  </Card>
+
+  <Card title="Global edge deployment" icon="globe">
+    Run containers in regions near your users for low-latency responses and local compliance.
+  </Card>
+
+  <Card title="Auto-scaling" icon="up-right-and-down-left-from-center">
+    Scale from zero to thousands of instances based on request volume or custom metrics.
+  </Card>
+
+  <Card title="HTTP and scheduled invocations" icon="bolt">
+    Serve HTTP traffic or run containers on a cron schedule for batch and background tasks.
+  </Card>
+
+  <Card title="Environment and secrets" icon="gear">
+    Inject environment variables and secrets securely at deploy time without baking them into images.
+  </Card>
+</CardGroup>
+
+## How it works
+
+You define a container by specifying an image, resource limits, and optional environment variables. BMDRM provisions the container on healthy edge nodes and routes incoming requests or scheduled triggers to running instances. When demand increases, additional instances are created automatically. When demand drops, idle instances scale down.
+
+## Get started
+
+<Steps>
+  <Step title="Create a container project">
+    In the BMDRM dashboard, go to **Products \> Magic Containers** and click **New project**.
+  </Step>
+  <Step title="Select an image">
+    Provide a Docker image reference from a public registry or connect a private registry with credentials.
+  </Step>
+  <Step title="Set resources and variables">
+    Choose memory and CPU limits, then add environment variables and secrets needed by your application.
+  </Step>
+  <Step title="Deploy and route traffic">
+    Deploy the container and assign a hostname or custom domain. BMDRM will route requests to running instances.
+  </Step>
+</Steps>
+
+<Tip>
+  Use lightweight base images and health-check endpoints to enable faster cold starts and more responsive scaling.
+</Tip>

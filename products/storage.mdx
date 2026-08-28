@@ -1,0 +1,84 @@
+---
+title: "BMDRM Storage: Global Object Storage Platform"
+sidebarTitle: "Storage"
+description: "BMDRM Storage is S3-compatible object storage for backups, assets, and unstructured data. Store files globally with simple HTTP APIs and CLI tools."
+---
+
+BMDRM Storage provides S3-compatible object storage for files of any size. You can use it to store backups, media assets, logs, or application data and access it through standard HTTP APIs, SDKs, and CLI tools.
+
+## Key features
+
+<CardGroup cols={3}>
+  <Card title="S3-compatible API" icon="database">
+    Use existing AWS SDKs, tools, and workflows with BMDRM endpoint and credential configuration.
+  </Card>
+
+  <Card title="Global distribution" icon="globe">
+    Replicate objects across regions or serve them through the CDN for fast global access.
+  </Card>
+
+  <Card title="Access policies" icon="key">
+    Control access with bucket policies, signed URLs, and fine-grained IAM-style permissions.
+  </Card>
+
+  <Card title="Lifecycle rules" icon="clock">
+    Automate transitions and expirations with lifecycle policies to manage costs over time.
+  </Card>
+
+  <Card title="Multipart uploads" icon="object-group">
+    Upload large files reliably with multipart upload and resume support.
+  </Card>
+</CardGroup>
+
+## How it works
+
+You create a storage bucket in a region of your choice. Objects are stored durably and can be replicated to additional regions. You read and write objects using the S3-compatible API or through BMDRM SDKs. For public assets, you can connect a bucket to the CDN and serve content directly from the edge.
+
+## Get started
+
+<Steps>
+  <Step title="Create a bucket">
+    In the BMDRM dashboard, go to **Products \> Storage** and click **Create bucket**. Choose a region and a unique name.
+  </Step>
+  <Step title="Generate access keys">
+    Create API credentials scoped to the bucket. You receive an access key and secret to use with S3-compatible tools.
+  </Step>
+  <Step title="Upload files">
+    Use the dashboard, CLI, or API to upload objects. Set access policies as needed.
+  </Step>
+  <Step title="Integrate with your app">
+    Configure your existing S3 SDK to use the BMDRM endpoint, access key, and bucket name.
+  </Step>
+</Steps>
+
+### Example API request
+
+<CodeGroup>
+
+```bash cURL
+curl -X PUT https://api.bmdrm.com/v1/storage/buckets/my-bucket/objects/file.zip \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/zip" \
+  --data-binary @file.zip
+```
+
+```javascript JavaScript
+const fs = require('fs');
+const file = fs.readFileSync('file.zip');
+
+const res = await fetch('https://api.bmdrm.com/v1/storage/buckets/my-bucket/objects/file.zip', {
+  method: 'PUT',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/zip'
+  },
+  body: file
+});
+console.log(res.status);
+```
+
+</CodeGroup>
+
+<Tip>
+  Enable bucket versioning if you need to recover overwritten or deleted objects.
+</Tip>
