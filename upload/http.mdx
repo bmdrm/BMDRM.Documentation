@@ -16,14 +16,14 @@ Before you begin, ensure you have:
 
 Uploading a video through the HTTP API involves **two main steps:**
 
-1. **Initialize an upload job** (video metadata and title).
+1. **Initialize an upload job** (video metadata, number of chunks, and title).
 2. Send **chunked video segments** using POST requests
 
 ## Initializing an Upload job
 
 Before uploading any video content, you must first **initialize an upload job** in BMDRM. This step is often overlooked, so please ensure it’s completed before proceeding with the upload.
 
-> This step tells BMDRM that you’re about to upload a new video and gives it a title and optional metadata. It doesn’t upload the video yet, just sets up the “slot” for it.
+> This step tells BMDRM that you’re about to upload a new video and gives it a title, how many chunks to expect, and optional metadata. It doesn’t upload the video yet, just sets up the “slot” for it.
 
 You can find full details about the available parameters in the [Upload API Reference](/api-reference/upload) (still not documented)
 
