@@ -96,13 +96,7 @@ curl --request POST \
   --form 'chunkFile=<Chunked segment file in Binary format>'
 ```
 
-**Example Response:**
-
-```json
-{ "success": true, "message": "OK" }
-```
-
-This response indicates that the video was uploaded successfully.
+The response should return a \`200 OK\` status code indicating that the video was uploaded successfully.
 
 <Note>
   A **401 Unauthorized** on initialize or upload usually means the `API Key` header is missing or contains an expired key.
@@ -115,12 +109,12 @@ This response indicates that the video was uploaded successfully.
 **File Format Requirements:**
 
 - When uploading your video file, it must be sent as **raw binary data,** not encoded or wrapped in JSON.
-- Don’t send base64 encode the file
-- Send the video as binary in the multi-part form of the request
+- Don’t send base64 encode the file.
+- Send the video as binary in the multi-part form of the request.
 
 **cURL Tip:**
 
-Use the "--data-binary" flag to send the file correctly
+Use the "--form" flag to send the file correctly:
 
 ```bash
 \--form 'chunkFile=<Chunked segment file in Binary format>'
