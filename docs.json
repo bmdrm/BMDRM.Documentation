@@ -16,9 +16,9 @@
       {
         "group": "BMDRM",
         "pages": [
-          "untitled-page-3",
+          "introduction",
           "quickstart",
-          "untitled-page-4",
+          "authentication",
           "faq"
         ]
       },
@@ -28,8 +28,19 @@
           {
             "group": "Encoding",
             "pages": [
-              "untitled-page-2",
-              "untitled-page-5"
+              "encoding/standard-encoding",
+              "encoding/adaptive-bitrate-streaming"
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Manage Videos",
+        "pages": [
+          {
+            "group": "Upload",
+            "pages": [
+              "upload/http"
             ]
           }
         ]
@@ -37,7 +48,7 @@
       {
         "group": "Accounts",
         "pages": [
-          "untitled-page"
+          "accounts/appearance"
         ]
       }
     ]
