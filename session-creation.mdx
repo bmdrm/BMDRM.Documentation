@@ -1,0 +1,105 @@
+---
+title: "Session creation"
+description: "Create one-time use video sessions in BMDRM using the HTTP API for a reliable, fast, and encrypted playback."
+---
+
+## What You’ll Need
+
+Before you begin, ensure you have:
+
+- A [BMDRM](https://dev.bmdrm.com/) account ([Log in](https://dev.bmdrm.com/login) or sign up for a [free trial](https://dev.bmdrm.com/en/register)).
+- Have your API key prepared. To learn how to obtain your Streaming API key, see [Obtaining your API key](/bmdrm/authentication).
+- A successfully uploaded video, see [Multipart upload](/upload/multipart#initializing-an-upload-job).
+
+## How to create video sessions
+
+Make an authenticated POST request to the following endpoint:
+
+```bash
+POST https://cdn-lb.video-crypt.com/api/v2.0/sessions?videoId={video ID}&userId={user ID}
+```
+
+This endpoint creates sessions for both mobile and web playback.
+
+**Headers:**
+
+- `apiKey`: **Your Streaming API key**.
+- `Accept`: Must be `application/json`.
+
+**Query Parameters:**
+
+- `videoId`: The ID of the video to play. This is the `uploadJobId` returned during the [upload initialization step](/upload/multipart#initializing-an-upload-job).
+- `userId` : The user's identifier in your system. This value is rendered into the session's visible watermark.
+
+**Example request:**
+
+```bash
+curl --request POST \
+  --url 'https://cdn-lb.video-crypt.com/api/v2.0/sessions?videoId=00f05208-a732-4b7a-a616-74d2fb51445b&userId=demo_user' \
+  --header 'apiKey: <Your Streaming API key>' \
+  --header 'Accept: application/json'
+```
+
+**Response schema:**
+
+The response will return a new session object, including:
+
+Returns `200 OK` with the new session object.
+
+- `edge`: A CDN edge url, responsible for serving the created session (string)
+- `videoId`: The ID of the requested video (uuid)
+- `signature`: A session signature to be verified by BMDRM (string)
+- `userId`: The user ID supplied by the client (string)
+- `subscriptionId`: The corresponding ID of the client subscription (uuid)
+- `sessionId`: The ID of the one-time use session (uuid)
+- `nonce`: One-time use number (string)
+- `date`: Timestamp of session creation (number)
+
+<Note>
+  The player needs **every field** from this response object to authenticate.
+
+  {/* TODO: link the playback page here once its path is confirmed. */}
+</Note>
+
+### Session lifetime
+
+- Each session is valid for a single playback. Requesting playback again with the same `sessionId` and `nonce` will fail.
+
+## How to create web-only video sessions
+
+<Warning>
+  This method is deprecated. Use the [v2.0 session endpoint](#create-a-video-session) instead, which supports both web and mobile playback.
+</Warning>
+
+<Accordion title="View the deprecated web-only method">
+  Make an authenticated POST request to the following endpoint:
+
+  ```bash
+  POST https://cdn-lb.video-crypt.com/api/sessions?videoId={video ID}&userId={user ID}
+  ```
+
+  **Headers:**
+
+  - `apiKey`: Your **Streaming API key**
+  - `Content-Type: application/json`
+
+  **Query Parameters:**
+
+  - `videoId`: The ID of the video to play. This is the `uploadJobId` returned during the [upload initialization step](/upload/multipart#initializing-an-upload-job). (uuid)
+  - `userId` : The user's identifier in your system. This value is rendered into the session's visible watermark. (string)
+
+  **Example request:**
+
+  ```bash
+  curl --request POST \
+    --url 'https://cdn-lb.video-crypt.com/api/sessions?videoId=00f05208-a732-4b7a-a616-74d2fb51445b&userId=demo_user' \
+    --header 'apiKey: <Your Streaming API key>' \
+    --header 'Accept: application/json'
+  ```
+
+  **Response schema:**
+
+  The response will return a web-only session object, including:
+
+  - `urlToEdge`: A session url that could be opened independantely in the browser or [integrated in your web application](/)
+</Accordion>
