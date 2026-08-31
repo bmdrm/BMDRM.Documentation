@@ -40,7 +40,7 @@
           {
             "group": "Upload",
             "pages": [
-              "upload/http"
+              "upload/multipart"
             ]
           }
         ]
