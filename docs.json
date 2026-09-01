@@ -12,32 +12,52 @@
     "dark": "/images/android-chrome-192x192.png"
   },
   "navigation": {
-    "pages": [
-      "introduction",
-      "quickstart",
-      "authentication",
-      "faq",
+    "groups": [
       {
-        "group": "Encoding",
+        "group": "BMDRM",
         "pages": [
-          "encoding/standard-encoding",
-          "encoding/adaptive-bitrate-streaming"
+          "introduction",
+          "quickstart",
+          "authentication",
+          "faq"
         ]
       },
       {
-        "group": "Upload",
+        "group": "Features",
         "pages": [
-          "upload/multipart"
+          {
+            "group": "Encoding",
+            "pages": [
+              "encoding/standard-encoding",
+              "encoding/adaptive-bitrate-streaming"
+            ]
+          }
         ]
       },
       {
-        "group": "Streaming",
+        "group": "Manage Videos",
         "pages": [
-          "session-creation",
-          "player-integration"
+          {
+            "group": "Upload",
+            "pages": [
+              "upload/multipart"
+            ]
+          },
+          {
+            "group": "Streaming",
+            "pages": [
+              "session-creation",
+              "player-integration"
+            ]
+          }
         ]
       },
-      "accounts/appearance"
+      {
+        "group": "Accounts",
+        "pages": [
+          "accounts/appearance"
+        ]
+      }
     ]
   },
   "logo": {
@@ -74,5 +94,8 @@
   },
   "background": {
     "decoration": "gradient"
+  },
+  "metadata": {
+    "timestamp": true
   }
 }
