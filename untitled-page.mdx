@@ -1,0 +1,44 @@
+---
+title: "Player integration"
+description: "BMDRM is designed for developers and content creators to easily upload, process, and display videos within any application or website. Once your videos have been processed, you can embed them by using our lightweight embed player, enabling seamless playback across all devices and browsers."
+---
+
+Once a video has finished processing, you can embed it on any page using the BMDRM player. This page covers the iframe URL pattern, sizing tips, and code samples for common frameworks.
+
+## How to embed a video?
+
+Embedding a video involves placing an `<iframe>` element on your webpage. By referencing the correct BMDRM embed url through concatenating the fields obtained from [Session Creation response](/session-creation#) , you can display your video anywhere you like. Each embedded video is accessed via the following URL pattern:
+
+```text
+{edge}/player?userId={userId}&subscriptionId={subscriptionId}&sessionId={sessionId}&videoId={videoId}&nonce={nonce}&date={date}&signature={signature}
+```
+
+<Note>
+  You could use this streaming session URL for video embed or direct play in the browser.
+</Note>
+
+BMDRM embed player will automatically adjust to fill the full width and height of the `<iframe>`. For best results, we recommend using a responsive layout. If a fixed aspect ratio is required, a common approach is to use a container with a `position:absolute;top:0;width:100%;height:100%;` style, maintaining a standard 16:9 format or your desired ratio.
+
+Example code:
+
+<CodeGroup>
+
+```javascript JavaScript
+<div style={{ position: "relative", paddingTop: "56.25%" }}>
+  <iframe
+    src="https://edge-4.video-crypt.com/player?userId=demo&subscriptionId=00f05208-084c-40c0-8457-38d126feece6&sessionId=003f650f-0dcc-424c-a19f-d146e483ab8c&videoId=00f05208-a732-4b7a-a616-74d2fb51445b&nonce=b8828c81e49aea8&date=1788258104&signature=5ZQxkAKv1fSgp9FcAgxbwmKzsn9XAwpomaywprdEwALG7bGyM4aSVKJxDzwoYU7xkNAvUG1So67qvCHXt9tMi3b1"
+    loading="lazy"
+    style={{
+      border: "none",
+      position: "absolute",
+      top: "0",
+      height: "100%",
+      width: "100%",
+    }}
+    allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+    allowFullScreen="true"
+  ></iframe>
+</div>
+```
+
+</CodeGroup>
