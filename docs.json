@@ -94,5 +94,8 @@
   },
   "metadata": {
     "timestamp": true
+  },
+  "background": {
+    "decoration": "gradient"
   }
 }
