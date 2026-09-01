@@ -92,9 +92,6 @@
   "appearance": {
     "default": "light"
   },
-  "background": {
-    "decoration": "gradient"
-  },
   "metadata": {
     "timestamp": true
   }
