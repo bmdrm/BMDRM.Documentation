@@ -47,6 +47,7 @@ POST https://uploads.bmdrm.com/api/public/fileupload/Init
 - `description` (optional): The description of the video. This will appear in the dashboard UI.
 - `fileSize`: The size of the video file in Bytes.
 - `totalChunks`: The total number of chunks of the video file.
+- `collectionId` (optional): The ID of a collection in your library where this video should be placed.
 
 **Example request:**
 
@@ -56,7 +57,7 @@ curl --request POST \
   --header 'API-KEY: <Your Upload API key>' \
   --header 'Accept: application/json' \
   --header 'Content-Type: application/json' \
-  --data-raw '{"title":"BMDRM Demo","totalChunks":5,"fileSize":5025158}'
+  --data-raw '{"title":"BMDRM Demo","totalChunks":5,"fileSize":5025158, "collectionId":"01a07b23-2f6e-712a-a6e4-9a217027fe70" }'
 ```
 
 **Example Response:**
